@@ -10,7 +10,7 @@ import json
 
 def main():
     # Abre o ficheiro e descodifica-o criando o objeto twits.
-    with open("twitter.json", encoding="utf8") as f:
+    with open("/Users/tiago/Documents/Universidade/FP/extra2/twitter.json", encoding="utf8") as f:
         twits = json.load(f)
 
     # Analise os resultados impressos para perceber a estrutura dos dados.

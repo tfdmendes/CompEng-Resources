@@ -1,78 +1,119 @@
-import csv
-
-def data():
-    """Returns the header list and a list of tuples containing the information for each club"""
-
-    path = "/Users/tiago/Documents/Universidade/FP/Soccer_Football Clubs Ranking/Soccer_Football Clubs Ranking.csv"
-    with open(path, mode='r') as file:
-        csvreader = csv.reader(file)
-        # Lista de categorias (['ranking', 'club name ', 'country', 'point score', '1 year change', 'previous point scored', 'symbol change'])
-        header = []
-        header = next(csvreader)
-        
-        rows = []
-        for row in csvreader:
-            rows.append(row)
-        
-        tuple_list = []
-        for line in rows:
-            tuple_list.append(tuple(line))
-        #print(tuple_list)
-
-    return tuple_list, header
-
-def country(country_name, clubs_info_list):
-    """Gets the name of the country, and prints all club's names, respective ranking number, and current score. Returns dictionary of """
-
-    for info in clubs_info_list:
-        if country_name in info:
-            out = f"Nome clube: {info[1]}\nNúmero ranking: {info[0]}\nScore atual: {info[3]}\n\n"
-            output("saida", out)
-    
-
-def output(file_name, output):
-    """ Writes to the output file ('file_name')"""
-
-    path = f"/Users/tiago/Documents/Universidade/FP/Soccer_Football Clubs Ranking/{file_name}"
-    with open(path, mode='a') as file:
-        file.write(output)
+#1
+def ficheiro_tupulo(nome_ficheiro):
+   with open(nome_ficheiro, "r", encoding="UTF-8") as file:
+      lista_informacoes = []
+      for line in file:
+         if line.startswith("ranking") == True:
+            continue
+         line_formatted = line.strip()
+         club = line_formatted.split(",")
+         lista_informacoes.append(tuple(club))
+      return lista_informacoes
 
 
-def clubs_from_country(clubs_info_list):
-    """Returns a dictionary which the key is the country and the value is a list with all the club names from that country."""
 
-    dictionary = {}
+#* 2
+def pais_club(nome_pais, lista_clubes):
+   print(f"Clubs de {nome_pais}")
+   for info in lista_clubes:
+      club = info[1]
+      ranking = info[0]
+      pontos = info[3]
+      pais = info[2]
+      if nome_pais == pais:
+         mensagem = f"Club: {club}; Ranking: {ranking}; Pontos: {pontos}"
+         print(mensagem)
+         output("output", mensagem)
 
-    country_tpl = ()
-    for info in clubs_info_list:
-        country = info[2]
-        country_tpl += (country,)
 
-    for country_name in country_tpl:
-        dictionary[country_name] = []
-    
-    for info in clubs_info_list:
-        dictionary[info[2]].append(info[1])
+#* 3
+def output(nome_ficheiro, out):
+   path = f"/Users/tiago/Documents/Universidade/FP/Soccer_Football Clubs Ranking/{nome_ficheiro}.txt"
+   with open(path, "a", encoding="UTF-8") as file:
+      file.write(f"{out}\n")
 
-    return dictionary
-        
 
-def rank_up(clubs_info_list):
-    ... 
+#* 4
+def dicionario_club(lista_clubes):
+   """Uma função que receba a lista de túpulos e que devolva um dicionário em que a chave é o país sede dos clubes e o valor correspondente deverá ser uma lista com o nome de todos os clubes desse país"""
+   pais_club = {}
+   for info in lista_clubes:
+      pais = info[2]
+      club = info[1]
+      if pais not in pais_club:
+         pais_club[pais] = [club]
+      else:
+         pais_club[pais].append(club)
 
+   return pais_club
+
+
+#* 5
+def maior_subida_ranking(lista_clubes):
+   """Uma função que receba a lista de túpulos e devolva o túpulo correspondente ao clube que mais subiu no ranking."""
+   maior_subida_ranking = 0
+   for info in lista_clubes:
+      diferenca_posicoes = int(info[4])
+      if diferenca_posicoes > maior_subida_ranking:
+         maior_subida_ranking = diferenca_posicoes
+         club_tuplo = info
+   return club_tuplo
+
+
+#*6
+def informacoes_club(nome, lista_clubes):
+   print(f"Informações sobre {nome}")
+   for info in lista_clubes:
+      ranking = info[0]
+      club = info[1]
+      pais = info[2]
+      pontos = info[3]
+      diferenca_posicoes = info[4]
+      score_ano_anterior = info[5]
+      subida_descida = ""
+      if info[6] == "+":
+         subida_descida = "Subiu no ranking"
+      else:
+         subida_descida = "Desceu no ranking"
+
+      if nome == club:
+         print(f"Ranking: {ranking}; Pais: {pais}; Pontos: {pontos}; Número de posições que subiu/desceu: {diferenca_posicoes}; Score ano anterior: {score_ano_anterior}; {subida_descida}")
+         return
+   print(f"ERRO, não existe club com o nome {nome}")
+
+
+#* 7 e 8
+def ranking_medio(dicionario, clubes):
+   dicionario_ranking_medios = {}
+   for pais in dicionario:
+      numero_clubs = len(dicionario[pais])
+
+      ranking_total = 0
+      
+      for info in clubes:
+         ranking = int(info[0])
+         pais_club = info[2]
+         if pais == pais_club:
+            ranking_total += ranking
+
+      ranking_medio = round(ranking_total / numero_clubs)
+      dicionario_ranking_medios[pais] = ranking_medio
+
+   dicSorted = sorted(dicionario_ranking_medios.items(), key=lambda x:x[1])
+
+   for x in dicSorted:
+      print(f"Ranking médio de {x[0]} é {x[1]}")
+   
+   
 def main():
-    # * Ranking, Name, Country, Points, 1Year Change, previous point scored, symbol change
-    R, N, C, P, YC, PPS, C = 0, 1, 2, 3, 4, 5, 6
+   nome_ficheiro = "/Users/tiago/Documents/Universidade/FP/Soccer_Football Clubs Ranking/Soccer_Football Clubs Ranking.csv"
+   lista_clubes = ficheiro_tupulo(nome_ficheiro)
+   # clubes_pais("Nigeria", lista_clubes)
+   dicionario = dicionario_club(lista_clubes)
+   #club_maior_subida_ranking = maior_subida_ranking(lista_clubes)
+   #informacoes_club("AC Horsens", lista_clubes)
+   ranking_medio(dicionario, lista_clubes)
 
-    clubs_info_list, header = data()
-    #print(clubs_info_list)
-
-
-    #country("Bulgaria", clubs_info_list)
-    dictionary_of_clubs_from_country = clubs_from_country(clubs_info_list)
-
-
-    
 
 if __name__ == "__main__":
     main()
