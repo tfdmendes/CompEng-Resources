@@ -1,5 +1,3 @@
-Qualquer material disponibilizado aqui é destinado ao uso livre, incentivando a aprendizagem e a colaboração. No entanto, é fundamental respeitar a integridade do conteúdo, sendo expressamente proibida a sua reprodução literal.
-
 ---
 # Índice
 - ## [1º semestre](https://github.com/tfdmendes/curso/tree/main/1ano/1semestre)
@@ -13,4 +11,5 @@ Qualquer material disponibilizado aqui é destinado ao uso livre, incentivando a
     - [Guiões](https://github.com/tfdmendes/curso/tree/main/1ano/1semestre/Calculo%20I/Gui%C3%B5es)
    
 ---
-Todos os apontamentos feitos são da autoria de [Tiago Mendes](https://github.com/tfdmendes) o uso dos mesmos é totalmente subjetivo, sujeitando-se qualquer um que os use aos seus possíveis erros.
+Qualquer material disponibilizado aqui é destinado ao seu uso livre, incentivando a aprendizagem e a colaboração. No entanto, é fundamental respeitar a integridade do conteúdo, sendo **expressamente proibida** a sua reprodução literal.
+Todos os apontamentos são da autoria de [Tiago Mendes](https://github.com/tfdmendes) o uso dos mesmos é totalmente subjetivo, sujeitando-se qualquer um que os use aos seus possíveis erros.
