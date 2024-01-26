@@ -11,4 +11,5 @@
    
 ---
 Qualquer material disponibilizado aqui é destinado ao seu uso livre, incentivando a aprendizagem e a colaboração. No entanto, é fundamental respeitar a integridade do conteúdo, sendo **expressamente proibida** a sua reprodução literal.
+
 Todos os apontamentos são da autoria de [Tiago Mendes](https://github.com/tfdmendes) o uso dos mesmos é totalmente subjetivo, sujeitando-se qualquer um que os use aos seus possíveis erros.
