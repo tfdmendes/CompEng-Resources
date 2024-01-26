@@ -1,4 +1,3 @@
----
 # Índice
 - ## [1º semestre](https://github.com/tfdmendes/curso/tree/main/1ano/1semestre)
   - [Fundamentos de Programação](https://github.com/tfdmendes/curso/tree/main/1ano/1semestre/FP)
