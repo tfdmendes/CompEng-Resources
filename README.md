@@ -6,9 +6,10 @@
   - [Álgebra Linear e Geometria Analítica](https://github.com/tfdmendes/curso/tree/main/1ano/1semestre/Algebra)
     - [Folhas Exercícios](https://github.com/tfdmendes/curso/tree/main/1ano/1semestre/Algebra/Folhas%20Exercicios)
     - [Guiões](https://github.com/tfdmendes/curso/tree/main/1ano/1semestre/Algebra/Slides%20Mat%C3%A9ria)
+    - [Apontamentos](https://github.com/tfdmendes/curso/tree/main/1ano/1semestre/Algebra/Apontamentos)
   - [Cálculo 1](https://github.com/tfdmendes/curso/tree/main/1ano/1semestre/Calculo%20I)
     - [Guiões](https://github.com/tfdmendes/curso/tree/main/1ano/1semestre/Calculo%20I/Gui%C3%B5es)
-   
+    - [Apontamentos](https://github.com/tfdmendes/curso/tree/main/1ano/1semestre/Calculo%20I/Apontamentos)
 ---
 Qualquer material disponibilizado aqui é destinado ao seu uso livre, incentivando a aprendizagem e a colaboração. No entanto, é fundamental respeitar a integridade do conteúdo, sendo **expressamente proibida** a sua reprodução literal.
 
