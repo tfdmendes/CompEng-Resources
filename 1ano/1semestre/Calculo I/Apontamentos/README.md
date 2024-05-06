@@ -10,6 +10,6 @@ Para o uso destes recursos é aconselhado que a que se faça o download dos mesm
 - [Cadernos 1/2](https://drive.google.com/file/d/1qBTCx-dteBICtaI8kGEq5j2J6ppw5BmY/view?usp=sharing)
 - [Transformada de LaPlace](https://drive.google.com/file/d/14EYqn2CSsF2v9oeXoFuiolj1vICWfVEP/view?usp=sharing)
 
-A nota final de Cálculo I foi de 17
+A nota final de Cálculo I foi de 17 (Época recurso)
 
 Os exercícios e os resumos foram escritos com o propósito de apoiar o estudo à UC de Cálculo 1 lecionados na Universidade de Aveiro durante o Ano Letivo 2023-2024. É altamente possível (e provável) que estes contenham erros, daí a importância de realçar que estes não devem ser tidos como base para qualquer tipo de estudo independente, mas sim como algo complementar.
