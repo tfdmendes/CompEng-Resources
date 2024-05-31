@@ -1,5 +1,7 @@
 package aula10.Ex01;
 
+import java.util.Objects;
+
 public class Book {
 
     private String title, author;
@@ -44,6 +46,20 @@ public class Book {
     @Override
     public String toString(){
         return "Titulo: " + this.title + ", Autor: " + this.author + ", Ano: " + this.year;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if(this == obj)
+            return true;
+        if(!(obj instanceof Book book))
+            return true;
+        return getYear() == book.getYear() && title.equals(book.title) && author.equals(book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, year);
     }
     
 

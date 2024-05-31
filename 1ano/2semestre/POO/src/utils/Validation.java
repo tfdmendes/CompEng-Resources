@@ -3,9 +3,9 @@ package utils;
 public class Validation {
     
     /**
-     * Reads user inputted string and sees if it can be converted to Double
+     * Reads user inputted String and sees if it can be converted to Double
      * 
-     * @param str The user inputted numeric string
+     * @param str The user inputted numeric String
      * @exception NumberFormatException if can't be converted to double.
      * @return True if it can be converted, otherwise false.
      */
@@ -30,7 +30,6 @@ public class Validation {
     }
 
 
-
     /**
      * Reads a user-inputted email. Types of emails validated with the method:<p>
      * <code>AAA.123@gmail.com | AAA.123@hotmail.com</code><p>
@@ -39,9 +38,8 @@ public class Validation {
      * @return True if the inputted string matches any of the formats, otherwise false.
      */
     public static boolean validEmail(String email){
-        return email.matches("[a-zA-Z0-9._%+-]+@(gmail.com|hotmail.com)");
+        return email.matches("[a-zA-Z0-9._%+-]+@(gmail.com|hotmail.com|ua.pt)");
     }
-
 
     
     /**
@@ -53,5 +51,11 @@ public class Validation {
      */
     public static boolean validPostalCode(String code){
         return code.matches("[1-9]{1}[0-9]{3}-[0-9]{3}");
+    }
+
+
+    // "teste-hoje" would return true because it contains a hyphen (`-`)    
+    public static boolean containsNonAlphabeticCharacters(String str){
+        return !str.matches("[a-zA-Z]+");
     }
 }

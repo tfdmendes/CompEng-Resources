@@ -79,10 +79,10 @@ public class UserInput {
      */
     public static String readString(Scanner sc, String message){
         System.out.print(message);
-        String input = sc.next();
+        String input = sc.nextLine();
         while(!input.matches("[^0-9]+") ){
             System.out.print(message);
-            input = sc.next();
+            input = sc.nextLine();
         }
         return input;
     }   
