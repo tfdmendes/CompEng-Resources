@@ -24,4 +24,5 @@
 
 ---
 Qualquer material disponibilizado aqui é destinado ao seu uso livre, incentivando a aprendizagem e a colaboração. No entanto, é fundamental respeitar a integridade do conteúdo - pff nada de reprodução literal :)
+
 Todos os apontamentos são da autoria do [dono](https://github.com/tfdmendes) deste repositorio. O uso dos mesmos é totalmente subjetivo, sujeitando-se qualquer um que os use aos seus possíveis erros.
