@@ -22,7 +22,6 @@
     - [Folhas Exercicios](https://github.com/tfdmendes/UndergradCompEng-Resources/tree/main/1ano/2semestre/Calculo%20II/Fichas)
     - [Guiões](https://github.com/tfdmendes/UndergradCompEng-Resources/tree/main/1ano/2semestre/Calculo%20II/Slides)
 
-
 ---
-Qualquer material disponibilizado aqui é destinado ao seu uso livre, incentivando a aprendizagem e a colaboração. No entanto, é fundamental respeitar a integridade do conteúdo, sendo **expressamente proibida** a sua reprodução literal.
+Qualquer material disponibilizado aqui é destinado ao seu uso livre, incentivando a aprendizagem e a colaboração. No entanto, é fundamental respeitar a integridade do conteúdo - pff nada de reprodução literal :)
 Todos os apontamentos são da autoria do [dono](https://github.com/tfdmendes) deste repositorio. O uso dos mesmos é totalmente subjetivo, sujeitando-se qualquer um que os use aos seus possíveis erros.
