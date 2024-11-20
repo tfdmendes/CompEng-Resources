@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Mar 22 11:39:44 2024
+Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+Revision Name : SeqShiftUnit_Demo
+Top-level Entity Name : SeqShiftUnit
+Family : Cyclone IV E
+Total logic elements : 11
+    Total combinational functions : 11
+    Dedicated logic registers : 8
+Total registers : 8
+Total pins : 23
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

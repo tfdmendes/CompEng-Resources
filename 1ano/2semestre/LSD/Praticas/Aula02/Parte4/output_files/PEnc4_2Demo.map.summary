@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Mar  7 18:34:28 2024
+Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+Revision Name : PEnc4_2Demo
+Top-level Entity Name : PEnc16_4Demo
+Family : Cyclone IV E
+Total logic elements : 18
+    Total combinational functions : 18
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 21
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

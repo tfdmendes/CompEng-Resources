@@ -1,0 +1,30 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity PEnc4_2 is
+    port(
+        decodedIn   : in std_logic_vector (3 downto 0);
+        encodedOut  : out std_logic_vector (1 downto 0);
+        validOut    : out std_logic);
+    end PEnc4_2;
+
+    architecture Behavioral of PEnc4_2 is
+    begin
+        process(decodedIn)
+        begin
+				validOut <= '1'
+            if      (decodedIn(3) = '1') then
+                encodedOut <= "11";
+            elseif  (decodedIn(2) = '1') then
+                encodedOut <= "10";
+            elseif  (decodedIn(1) = '1') then
+                encodedOut <= "01";
+				elseif  (decodedIn(0) = '1') then
+                encodedOut <= "00";
+            else
+							validOut <= '0' then 
+					 encodeOut <= "XX"
+            end if;
+        end process
+    end Behavioral;
+            

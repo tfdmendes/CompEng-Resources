@@ -1,0 +1,23 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity Programa1 is
+    Port (
+        Enable      : in std_logic; 
+        sinal_vermelho    : out std_logic_vector(3 downto 0);
+        sinal_verde    : out std_logic_vector(3 downto 0));
+end Programa1;
+
+architecture Behavioral of Programa1 is
+begin
+    process(Enable)
+    begin
+            if Enable = '1' then
+                sinal_vermelho <= "1111";
+                sinal_verde <= "1111";
+            else
+                sinal_vermelho <= "0000";
+                sinal_verde <= "0000";
+            end if;
+    end process;
+end Behavioral;

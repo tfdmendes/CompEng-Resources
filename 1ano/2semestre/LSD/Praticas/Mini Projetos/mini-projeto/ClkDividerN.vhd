@@ -1,0 +1,40 @@
+library IEEE; 
+use IEEE.STD_LOGIC_1164.all; 
+use IEEE.NUMERIC_STD.all; 
+
+entity ClkDividerN is 
+	generic(divFactor : positive := 50000000); 
+	port(clkIn 		: in std_logic;
+			pulseOut	: out std_logic;
+		  clkOut 	: out std_logic); 
+end ClkDividerN; 
+
+architecture Behavioral of ClkDividerN is
+	signal s_counter	:	natural;
+
+begin
+	assert(divFactor >= 2);
+	process(clkIn)
+	begin
+		if (rising_edge(clkIn)) then
+			-- Incrementa o contador a cada transição de subida do clock
+			s_counter <= s_counter +1;
+			
+			-- gerarum pulso quando o contador e resetado
+			if s_counter = 0 then
+				pulseOut <= '1';
+			else
+				pulseOut <= '0';
+			end if;
+
+			-- quando o valor de contagem atingir metade da contage, a saída lógica é colocada a '1'
+			if (s_counter = (divFactor/2) - 1) then
+				clkOut 	<= '1';
+			-- quando o valor de contagem atingir o valor divFactor-1, a saída é colocada a '0' e é feito o reset do contador
+			elsif (s_counter = divFactor-1) then
+				clkOut		<= '0';
+				s_Counter 	<= 0; 
+			end if;
+		end if;
+	end process;
+end Behavioral;

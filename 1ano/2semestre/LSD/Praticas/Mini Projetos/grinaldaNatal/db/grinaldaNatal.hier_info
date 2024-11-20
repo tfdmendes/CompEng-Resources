@@ -1,0 +1,379 @@
+|grinaldaNatal
+CLOCK_50 => programab:progB.CLK
+CLOCK_50 => programac:progC.CLK
+CLOCK_50 => programad:progD.CLK
+SW[0] => programselector:selector.input[0]
+SW[0] => bin7segdecoder:Bin7SegDecoderUnits.binInput[0]
+SW[1] => programselector:selector.input[1]
+SW[1] => bin7segdecoder:Bin7SegDecoderUnits.binInput[1]
+SW[2] => bin7segdecoder:Bin7SegDecoderUnits.enable
+KEY[0] => ~NO_FANOUT~
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+LEDR[0] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= LEDR.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[4] <= LEDG.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[5] <= LEDG.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[6] <= LEDG.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[7] <= LEDG.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] <= bin7segdecoder:Bin7SegDecoderUnits.decOut_n[0]
+HEX0[1] <= bin7segdecoder:Bin7SegDecoderUnits.decOut_n[1]
+HEX0[2] <= bin7segdecoder:Bin7SegDecoderUnits.decOut_n[2]
+HEX0[3] <= bin7segdecoder:Bin7SegDecoderUnits.decOut_n[3]
+HEX0[4] <= bin7segdecoder:Bin7SegDecoderUnits.decOut_n[4]
+HEX0[5] <= bin7segdecoder:Bin7SegDecoderUnits.decOut_n[5]
+HEX0[6] <= bin7segdecoder:Bin7SegDecoderUnits.decOut_n[6]
+
+
+|grinaldaNatal|ProgramSelector:selector
+input[0] => Equal0.IN1
+input[0] => Equal1.IN1
+input[0] => Equal2.IN0
+input[0] => Equal3.IN1
+input[1] => Equal0.IN0
+input[1] => Equal1.IN0
+input[1] => Equal2.IN1
+input[1] => Equal3.IN0
+ProgramaA <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+ProgramaB <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+ProgramaC <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+programaD <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|grinaldaNatal|Bin7SegDecoder:Bin7SegDecoderUnits
+binInput[0] => Equal0.IN1
+binInput[0] => Equal1.IN0
+binInput[0] => Equal2.IN1
+binInput[0] => Equal3.IN1
+binInput[1] => Equal0.IN0
+binInput[1] => Equal1.IN1
+binInput[1] => Equal2.IN0
+binInput[1] => Equal3.IN0
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n.OUTPUTSELECT
+enable => decOut_n[4].DATAIN
+decOut_n[0] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[1] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[2] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[3] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[4] <= enable.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[5] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+decOut_n[6] <= decOut_n.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|grinaldaNatal|ProgramaA:progA
+Enable => LEDGOUT[0].DATAIN
+Enable => LEDROUT[3].DATAIN
+Enable => LEDROUT[2].DATAIN
+Enable => LEDROUT[1].DATAIN
+Enable => LEDROUT[0].DATAIN
+Enable => LEDGOUT[3].DATAIN
+Enable => LEDGOUT[2].DATAIN
+Enable => LEDGOUT[1].DATAIN
+LEDROUT[0] <= Enable.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[1] <= Enable.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[2] <= Enable.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[3] <= Enable.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[0] <= Enable.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[1] <= Enable.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[2] <= Enable.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[3] <= Enable.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|grinaldaNatal|ProgramaB:progB
+CLK => blinkgenerator:blinkInstance.clk
+CLK => LEDGOUT[0]~reg0.CLK
+CLK => LEDGOUT[1]~reg0.CLK
+CLK => LEDGOUT[2]~reg0.CLK
+CLK => LEDGOUT[3]~reg0.CLK
+CLK => LEDROUT[0]~reg0.CLK
+CLK => LEDROUT[1]~reg0.CLK
+CLK => LEDROUT[2]~reg0.CLK
+CLK => LEDROUT[3]~reg0.CLK
+Enable => LEDROUT.OUTPUTSELECT
+LEDROUT[0] <= LEDROUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[1] <= LEDROUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[2] <= LEDROUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[3] <= LEDROUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[0] <= LEDGOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[1] <= LEDGOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[2] <= LEDGOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[3] <= LEDGOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|grinaldaNatal|ProgramaB:progB|BlinkGenerator:blinkInstance
+clk => s_counter[0].CLK
+clk => s_counter[1].CLK
+clk => s_counter[2].CLK
+clk => s_counter[3].CLK
+clk => s_counter[4].CLK
+clk => s_counter[5].CLK
+clk => s_counter[6].CLK
+clk => s_counter[7].CLK
+clk => s_counter[8].CLK
+clk => s_counter[9].CLK
+clk => s_counter[10].CLK
+clk => s_counter[11].CLK
+clk => s_counter[12].CLK
+clk => s_counter[13].CLK
+clk => s_counter[14].CLK
+clk => s_counter[15].CLK
+clk => s_counter[16].CLK
+clk => s_counter[17].CLK
+clk => s_counter[18].CLK
+clk => s_counter[19].CLK
+clk => s_counter[20].CLK
+clk => s_counter[21].CLK
+clk => s_counter[22].CLK
+clk => s_counter[23].CLK
+clk => s_counter[24].CLK
+blink <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|grinaldaNatal|ProgramaC:progC
+CLK => blinkgenerator:blinkInstance.clk
+CLK => LEDROUT[0]~reg0.CLK
+CLK => LEDROUT[1]~reg0.CLK
+CLK => LEDROUT[2]~reg0.CLK
+CLK => LEDROUT[3]~reg0.CLK
+CLK => LEDGOUT[0]~reg0.CLK
+CLK => LEDGOUT[1]~reg0.CLK
+CLK => LEDGOUT[2]~reg0.CLK
+CLK => LEDGOUT[3]~reg0.CLK
+Enable => LEDGOUT.OUTPUTSELECT
+LEDROUT[0] <= LEDROUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[1] <= LEDROUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[2] <= LEDROUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[3] <= LEDROUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[0] <= LEDGOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[1] <= LEDGOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[2] <= LEDGOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[3] <= LEDGOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|grinaldaNatal|ProgramaC:progC|BlinkGenerator:blinkInstance
+clk => s_counter[0].CLK
+clk => s_counter[1].CLK
+clk => s_counter[2].CLK
+clk => s_counter[3].CLK
+clk => s_counter[4].CLK
+clk => s_counter[5].CLK
+clk => s_counter[6].CLK
+clk => s_counter[7].CLK
+clk => s_counter[8].CLK
+clk => s_counter[9].CLK
+clk => s_counter[10].CLK
+clk => s_counter[11].CLK
+clk => s_counter[12].CLK
+clk => s_counter[13].CLK
+clk => s_counter[14].CLK
+clk => s_counter[15].CLK
+clk => s_counter[16].CLK
+clk => s_counter[17].CLK
+clk => s_counter[18].CLK
+clk => s_counter[19].CLK
+clk => s_counter[20].CLK
+clk => s_counter[21].CLK
+clk => s_counter[22].CLK
+clk => s_counter[23].CLK
+clk => s_counter[24].CLK
+blink <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|grinaldaNatal|ProgramaD:progD
+CLK => clkdividern:clkDividerN.clkIn
+CLK => LEDROUT[0]~reg0.CLK
+CLK => LEDROUT[1]~reg0.CLK
+CLK => LEDROUT[2]~reg0.CLK
+CLK => LEDROUT[3]~reg0.CLK
+CLK => LEDGOUT[0]~reg0.CLK
+CLK => LEDGOUT[1]~reg0.CLK
+CLK => LEDGOUT[2]~reg0.CLK
+CLK => LEDGOUT[3]~reg0.CLK
+CLK => phase.CLK
+CLK => last_timer_output.CLK
+CLK => blinkgenerator:red_blink.clk
+CLK => blinkgenerator:green_blink.clk
+Enable => phase.OUTPUTSELECT
+Enable => LEDGOUT.OUTPUTSELECT
+Enable => LEDROUT.OUTPUTSELECT
+Enable => timern:timer6s.enable
+Enable => timern:timer6s.reset
+LEDROUT[0] <= LEDROUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[1] <= LEDROUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[2] <= LEDROUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDROUT[3] <= LEDROUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[0] <= LEDGOUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[1] <= LEDGOUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[2] <= LEDGOUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDGOUT[3] <= LEDGOUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|grinaldaNatal|ProgramaD:progD|ClkDividerN:clkDividerN
+clkIn => s_divCounter[0].CLK
+clkIn => s_divCounter[1].CLK
+clkIn => s_divCounter[2].CLK
+clkIn => s_divCounter[3].CLK
+clkIn => s_divCounter[4].CLK
+clkIn => s_divCounter[5].CLK
+clkIn => s_divCounter[6].CLK
+clkIn => s_divCounter[7].CLK
+clkIn => s_divCounter[8].CLK
+clkIn => s_divCounter[9].CLK
+clkIn => s_divCounter[10].CLK
+clkIn => s_divCounter[11].CLK
+clkIn => s_divCounter[12].CLK
+clkIn => s_divCounter[13].CLK
+clkIn => s_divCounter[14].CLK
+clkIn => s_divCounter[15].CLK
+clkIn => s_divCounter[16].CLK
+clkIn => s_divCounter[17].CLK
+clkIn => s_divCounter[18].CLK
+clkIn => s_divCounter[19].CLK
+clkIn => s_divCounter[20].CLK
+clkIn => s_divCounter[21].CLK
+clkIn => s_divCounter[22].CLK
+clkIn => s_divCounter[23].CLK
+clkIn => s_divCounter[24].CLK
+clkIn => s_divCounter[25].CLK
+clkIn => clkOut~reg0.CLK
+clkOut <= clkOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|grinaldaNatal|ProgramaD:progD|TimerN:timer6s
+clk => timerOut~reg0.CLK
+clk => s_count[0].CLK
+clk => s_count[1].CLK
+clk => s_count[2].CLK
+clk => s_count[3].CLK
+clk => s_count[4].CLK
+clk => s_count[5].CLK
+clk => s_count[6].CLK
+clk => s_count[7].CLK
+clk => s_count[8].CLK
+clk => s_count[9].CLK
+clk => s_count[10].CLK
+clk => s_count[11].CLK
+clk => s_count[12].CLK
+clk => s_count[13].CLK
+clk => s_count[14].CLK
+clk => s_count[15].CLK
+clk => s_count[16].CLK
+clk => s_count[17].CLK
+clk => s_count[18].CLK
+clk => s_count[19].CLK
+clk => s_count[20].CLK
+clk => s_count[21].CLK
+clk => s_count[22].CLK
+clk => s_count[23].CLK
+clk => s_count[24].CLK
+clk => s_count[25].CLK
+clk => s_count[26].CLK
+clk => s_count[27].CLK
+clk => s_count[28].CLK
+clk => s_count[29].CLK
+clk => s_count[30].CLK
+clk => s_count[31].CLK
+enable => process_0.IN0
+start => process_0.IN1
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => s_count.OUTPUTSELECT
+reset => process_0.IN1
+timerOut <= timerOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|grinaldaNatal|ProgramaD:progD|BlinkGenerator:red_blink
+clk => s_counter[0].CLK
+clk => s_counter[1].CLK
+clk => s_counter[2].CLK
+clk => s_counter[3].CLK
+clk => s_counter[4].CLK
+clk => s_counter[5].CLK
+clk => s_counter[6].CLK
+clk => s_counter[7].CLK
+clk => s_counter[8].CLK
+clk => s_counter[9].CLK
+clk => s_counter[10].CLK
+clk => s_counter[11].CLK
+clk => s_counter[12].CLK
+clk => s_counter[13].CLK
+clk => s_counter[14].CLK
+clk => s_counter[15].CLK
+clk => s_counter[16].CLK
+clk => s_counter[17].CLK
+clk => s_counter[18].CLK
+clk => s_counter[19].CLK
+clk => s_counter[20].CLK
+clk => s_counter[21].CLK
+clk => s_counter[22].CLK
+clk => s_counter[23].CLK
+clk => s_counter[24].CLK
+clk => s_counter[25].CLK
+blink <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|grinaldaNatal|ProgramaD:progD|BlinkGenerator:green_blink
+clk => s_counter[0].CLK
+clk => s_counter[1].CLK
+clk => s_counter[2].CLK
+clk => s_counter[3].CLK
+clk => s_counter[4].CLK
+clk => s_counter[5].CLK
+clk => s_counter[6].CLK
+clk => s_counter[7].CLK
+clk => s_counter[8].CLK
+clk => s_counter[9].CLK
+clk => s_counter[10].CLK
+clk => s_counter[11].CLK
+clk => s_counter[12].CLK
+clk => s_counter[13].CLK
+clk => s_counter[14].CLK
+clk => s_counter[15].CLK
+clk => s_counter[16].CLK
+clk => s_counter[17].CLK
+clk => s_counter[18].CLK
+clk => s_counter[19].CLK
+clk => s_counter[20].CLK
+clk => s_counter[21].CLK
+clk => s_counter[22].CLK
+clk => s_counter[23].CLK
+clk => s_counter[24].CLK
+blink <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,653 @@
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2021.2 linux_x86_64 Apr 14 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do ALU16_run_msim_gate_vhdl.do
+# if ![file isdirectory vhdl_libs] {
+# 	file mkdir vhdl_libs
+# }
+# 
+# vlib vhdl_libs/altera
+# ** Warning: (vlib-34) Library already exists at "vhdl_libs/altera".
+# Errors: 0, Warnings: 1
+# vmap altera ./vhdl_libs/altera
+# Questa Intel Starter FPGA Edition-64 vmap 2021.2 Lib Mapping Utility 2021.04 Apr 14 2021
+# vmap altera ./vhdl_libs/altera 
+# Copying /home/tiago/.intel_fpga_lite/22.1.2/questa_fse/linux_x86_64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# vcom -93 -work altera {/home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/altera_syn_attributes.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:40:19 on Apr 19,2024
+# vcom -reportprogress 300 -93 -work altera /home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/altera_syn_attributes.vhd 
+# -- Loading package STANDARD
+# -- Compiling package altera_syn_attributes
+# End time: 11:40:19 on Apr 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera {/home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/altera_standard_functions.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:40:19 on Apr 19,2024
+# vcom -reportprogress 300 -93 -work altera /home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/altera_standard_functions.vhd 
+# -- Loading package STANDARD
+# -- Compiling package altera_standard_functions
+# -- Compiling package body altera_standard_functions
+# -- Loading package altera_standard_functions
+# End time: 11:40:19 on Apr 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera {/home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/alt_dspbuilder_package.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:40:19 on Apr 19,2024
+# vcom -reportprogress 300 -93 -work altera /home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/alt_dspbuilder_package.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling package alt_dspbuilder_package
+# -- Compiling package body alt_dspbuilder_package
+# -- Loading package alt_dspbuilder_package
+# End time: 11:40:19 on Apr 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera {/home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/altera_europa_support_lib.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:40:19 on Apr 19,2024
+# vcom -reportprogress 300 -93 -work altera /home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/altera_europa_support_lib.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling package altera_europa_support_lib
+# -- Compiling package body altera_europa_support_lib
+# -- Loading package altera_europa_support_lib
+# End time: 11:40:20 on Apr 19,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera {/home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/altera_primitives_components.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:40:20 on Apr 19,2024
+# vcom -reportprogress 300 -93 -work altera /home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/altera_primitives_components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Compiling package dffeas_pack
+# -- Loading package dffeas_pack
+# -- Compiling package altera_primitives_components
+# End time: 11:40:20 on Apr 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work altera {/home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/altera_primitives.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:40:20 on Apr 19,2024
+# vcom -reportprogress 300 -93 -work altera /home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/altera_primitives.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity GLOBAL
+# -- Compiling architecture BEHAVIOR of GLOBAL
+# -- Compiling entity CARRY
+# -- Compiling architecture BEHAVIOR of CARRY
+# -- Compiling entity CASCADE
+# -- Compiling architecture BEHAVIOR of CASCADE
+# -- Compiling entity CARRY_SUM
+# -- Compiling architecture BEHAVIOR of CARRY_SUM
+# -- Compiling entity EXP
+# -- Compiling architecture BEHAVIOR of EXP
+# -- Compiling entity SOFT
+# -- Compiling architecture BEHAVIOR of SOFT
+# -- Compiling entity OPNDRN
+# -- Compiling architecture BEHAVIOR of OPNDRN
+# -- Compiling entity ROW_GLOBAL
+# -- Compiling architecture BEHAVIOR of ROW_GLOBAL
+# -- Compiling entity TRI
+# -- Compiling architecture BEHAVIOR of TRI
+# -- Compiling entity LUT_INPUT
+# -- Compiling architecture BEHAVIOR of LUT_INPUT
+# -- Compiling entity LUT_OUTPUT
+# -- Compiling architecture BEHAVIOR of LUT_OUTPUT
+# -- Compiling entity latch
+# -- Compiling architecture BEHAVIOR of latch
+# -- Compiling entity dlatch
+# -- Compiling architecture BEHAVIOR of dlatch
+# -- Compiling entity PRIM_GDFF
+# -- Compiling architecture BEHAVIOR of PRIM_GDFF
+# -- Loading entity PRIM_GDFF
+# -- Compiling entity DFF
+# -- Compiling architecture BEHAVIOR of DFF
+# -- Compiling entity DFFE
+# -- Compiling architecture BEHAVIOR of DFFE
+# -- Compiling entity DFFEA
+# -- Compiling architecture BEHAVIOR of DFFEA
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack
+# -- Compiling entity DFFEAS
+# -- Compiling architecture vital_dffeas of dffeas
+# -- Compiling entity PRIM_GTFF
+# -- Compiling architecture BEHAVIOR of PRIM_GTFF
+# -- Loading entity PRIM_GTFF
+# -- Compiling entity TFF
+# -- Compiling architecture BEHAVIOR of TFF
+# -- Compiling entity TFFE
+# -- Compiling architecture BEHAVIOR of TFFE
+# -- Compiling entity PRIM_GJKFF
+# -- Compiling architecture BEHAVIOR of PRIM_GJKFF
+# -- Loading entity PRIM_GJKFF
+# -- Compiling entity JKFF
+# -- Compiling architecture BEHAVIOR of JKFF
+# -- Compiling entity JKFFE
+# -- Compiling architecture BEHAVIOR of JKFFE
+# -- Compiling entity PRIM_GSRFF
+# -- Compiling architecture BEHAVIOR of PRIM_GSRFF
+# -- Loading entity PRIM_GSRFF
+# -- Compiling entity SRFF
+# -- Compiling architecture BEHAVIOR of SRFF
+# -- Compiling entity SRFFE
+# -- Compiling architecture BEHAVIOR of SRFFE
+# -- Compiling entity clklock
+# -- Compiling architecture behavior of clklock
+# -- Compiling entity alt_inbuf
+# -- Compiling architecture BEHAVIOR of alt_inbuf
+# -- Compiling entity alt_outbuf
+# -- Compiling architecture BEHAVIOR of alt_outbuf
+# -- Compiling entity alt_outbuf_tri
+# -- Compiling architecture BEHAVIOR of alt_outbuf_tri
+# -- Compiling entity alt_iobuf
+# -- Compiling architecture BEHAVIOR of alt_iobuf
+# -- Compiling entity alt_inbuf_diff
+# -- Compiling architecture BEHAVIOR of alt_inbuf_diff
+# -- Compiling entity alt_outbuf_diff
+# -- Compiling architecture BEHAVIOR of alt_outbuf_diff
+# -- Compiling entity alt_outbuf_tri_diff
+# -- Compiling architecture BEHAVIOR of alt_outbuf_tri_diff
+# -- Compiling entity alt_iobuf_diff
+# -- Compiling architecture BEHAVIOR of alt_iobuf_diff
+# -- Compiling entity alt_bidir_diff
+# -- Compiling architecture BEHAVIOR of alt_bidir_diff
+# -- Compiling entity alt_bidir_buf
+# -- Compiling architecture BEHAVIOR of alt_bidir_buf
+# End time: 11:40:20 on Apr 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlib vhdl_libs/cycloneive
+# ** Warning: (vlib-34) Library already exists at "vhdl_libs/cycloneive".
+# Errors: 0, Warnings: 1
+# vmap cycloneive ./vhdl_libs/cycloneive
+# Questa Intel Starter FPGA Edition-64 vmap 2021.2 Lib Mapping Utility 2021.04 Apr 14 2021
+# vmap cycloneive ./vhdl_libs/cycloneive 
+# Modifying modelsim.ini
+# vcom -93 -work cycloneive {/home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/cycloneive_atoms.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:40:21 on Apr 19,2024
+# vcom -reportprogress 300 -93 -work cycloneive /home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/cycloneive_atoms.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Compiling package cycloneive_atom_pack
+# -- Compiling package body cycloneive_atom_pack
+# -- Loading package cycloneive_atom_pack
+# -- Compiling package cycloneive_pllpack
+# -- Compiling package body cycloneive_pllpack
+# -- Loading package cycloneive_pllpack
+# -- Loading package cycloneive_atom_pack
+# -- Compiling entity cycloneive_dffe
+# -- Compiling architecture behave of cycloneive_dffe
+# -- Compiling entity cycloneive_mux21
+# -- Compiling architecture AltVITAL of cycloneive_mux21
+# -- Compiling entity cycloneive_mux41
+# -- Compiling architecture AltVITAL of cycloneive_mux41
+# -- Compiling entity cycloneive_and1
+# -- Compiling architecture AltVITAL of cycloneive_and1
+# -- Compiling entity cycloneive_lcell_comb
+# -- Compiling architecture vital_lcell_comb of cycloneive_lcell_comb
+# -- Compiling entity cycloneive_routing_wire
+# ** Warning: /home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/cycloneive_atoms.vhd(1667): (vcom-1288) VITAL timing generic "tpd_datainglitch_dataout" port specification "datainglitch" does not denote a port.
+# (1076.4 section 4.3.2.1.3)
+# -- Compiling architecture behave of cycloneive_routing_wire
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity cycloneive_mn_cntr
+# -- Compiling architecture behave of cycloneive_mn_cntr
+# -- Compiling entity cycloneive_scale_cntr
+# -- Compiling architecture behave of cycloneive_scale_cntr
+# -- Compiling entity cycloneive_pll_reg
+# -- Compiling architecture behave of cycloneive_pll_reg
+# -- Loading package cycloneive_pllpack
+# -- Loading entity cycloneive_mn_cntr
+# -- Loading entity cycloneive_scale_cntr
+# -- Loading entity cycloneive_dffe
+# -- Loading entity cycloneive_pll_reg
+# -- Compiling entity cycloneive_pll
+# -- Compiling architecture vital_pll of cycloneive_pll
+# -- Loading entity cycloneive_and1
+# -- Compiling entity cycloneive_ff
+# -- Compiling architecture vital_lcell_ff of cycloneive_ff
+# -- Compiling entity cycloneive_ram_register
+# -- Compiling architecture reg_arch of cycloneive_ram_register
+# -- Compiling entity cycloneive_ram_pulse_generator
+# -- Compiling architecture pgen_arch of cycloneive_ram_pulse_generator
+# -- Loading entity cycloneive_ram_register
+# -- Loading entity cycloneive_ram_pulse_generator
+# -- Compiling entity cycloneive_ram_block
+# -- Compiling architecture block_arch of cycloneive_ram_block
+# -- Compiling entity cycloneive_mac_data_reg
+# -- Compiling architecture vital_cycloneive_mac_data_reg of cycloneive_mac_data_reg
+# -- Compiling entity cycloneive_mac_sign_reg
+# -- Compiling architecture cycloneive_mac_sign_reg of cycloneive_mac_sign_reg
+# -- Compiling entity cycloneive_mac_mult_internal
+# -- Compiling architecture vital_cycloneive_mac_mult_internal of cycloneive_mac_mult_internal
+# -- Loading entity cycloneive_mac_data_reg
+# -- Loading entity cycloneive_mac_sign_reg
+# -- Loading entity cycloneive_mac_mult_internal
+# -- Compiling entity cycloneive_mac_mult
+# -- Compiling architecture vital_cycloneive_mac_mult of cycloneive_mac_mult
+# -- Compiling entity cycloneive_mac_out
+# -- Compiling architecture vital_cycloneive_mac_out of cycloneive_mac_out
+# -- Compiling entity cycloneive_io_ibuf
+# -- Compiling architecture arch of cycloneive_io_ibuf
+# -- Compiling entity cycloneive_io_obuf
+# -- Compiling architecture arch of cycloneive_io_obuf
+# -- Compiling entity cycloneive_ddio_oe
+# -- Compiling architecture arch of cycloneive_ddio_oe
+# -- Compiling entity cycloneive_latch
+# -- Compiling architecture vital_latch of cycloneive_latch
+# -- Compiling entity cycloneive_ddio_out
+# -- Compiling architecture arch of cycloneive_ddio_out
+# -- Compiling entity cycloneive_pseudo_diff_out
+# -- Compiling architecture arch of cycloneive_pseudo_diff_out
+# -- Compiling entity cycloneive_io_pad
+# -- Compiling architecture arch of cycloneive_io_pad
+# -- Compiling entity cycloneive_asmiblock
+# -- Compiling architecture behavior of cycloneive_asmiblock
+# -- Compiling entity cycloneive_ena_reg
+# -- Compiling architecture behave of cycloneive_ena_reg
+# -- Loading entity cycloneive_ena_reg
+# -- Compiling entity cycloneive_clkctrl
+# -- Compiling architecture vital_clkctrl of cycloneive_clkctrl
+# -- Compiling entity cycloneive_rublock
+# -- Compiling architecture architecture_rublock of cycloneive_rublock
+# -- Compiling entity cycloneive_apfcontroller
+# -- Compiling architecture architecture_apfcontroller of cycloneive_apfcontroller
+# -- Compiling entity cycloneive_termination
+# -- Compiling architecture cycloneive_termination_arch of cycloneive_termination
+# -- Compiling entity cycloneive_jtag
+# -- Compiling architecture architecture_jtag of cycloneive_jtag
+# -- Compiling entity cycloneive_crcblock
+# -- Compiling architecture architecture_crcblock of cycloneive_crcblock
+# -- Compiling entity cycloneive_oscillator
+# -- Compiling architecture architecture_oscillator of cycloneive_oscillator
+# End time: 11:40:21 on Apr 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vcom -93 -work cycloneive {/home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/cycloneive_components.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:40:21 on Apr 19,2024
+# vcom -reportprogress 300 -93 -work cycloneive /home/tiago/.intel_fpga_lite/22.1.2/quartus/eda/sim_lib/cycloneive_components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneive_atom_pack
+# -- Compiling package cycloneive_components
+# End time: 11:40:21 on Apr 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Questa Intel Starter FPGA Edition-64 vmap 2021.2 Lib Mapping Utility 2021.04 Apr 14 2021
+# vmap work gate_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {ALU16_7_1200mv_85c_slow.vho}
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:40:22 on Apr 19,2024
+# vcom -reportprogress 300 -93 -work work ALU16_7_1200mv_85c_slow.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Compiling entity hard_block
+# -- Compiling architecture structure of hard_block
+# -- Compiling entity ALU16
+# -- Compiling architecture structure of ALU16
+# End time: 11:40:22 on Apr 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {/home/tiago/Documents/LSD/Aula07/Parte 3 (ALU16)/ALU16_Tb.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 11:40:22 on Apr 19,2024
+# vcom -reportprogress 300 -93 -work work /home/tiago/Documents/LSD/Aula07/Parte 3 (ALU16)/ALU16_Tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ALU16_Tb
+# -- Compiling architecture Stimulus of ALU16_Tb
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Loading entity ALU16
+# End time: 11:40:22 on Apr 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /uut=ALU16_7_1200mv_85c_vhd_slow.sdo -L altera -L cycloneive -L gate_work -L work -voptargs="+acc"  ALU16_Tb
+# vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -sdftyp "/uut=ALU16_7_1200mv_85c_vhd_slow.sdo" -L altera -L cycloneive -L gate_work -L work -voptargs=""+acc"" ALU16_Tb 
+# Start time: 11:40:22 on Apr 19,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneive.cycloneive_atom_pack(body)
+# Loading cycloneive.cycloneive_components
+# Loading work.alu16_tb(stimulus)#1
+# Loading work.alu16(structure)#1
+# Loading work.hard_block(structure)#1
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneive.cycloneive_io_obuf(arch)#2
+# Loading cycloneive.cycloneive_io_ibuf(arch)#1
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#1
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#2
+# Loading ieee.std_logic_unsigned(body)
+# Loading cycloneive.cycloneive_mac_mult(vital_cycloneive_mac_mult)#1
+# Loading cycloneive.cycloneive_mac_data_reg(vital_cycloneive_mac_data_reg)#1
+# Loading cycloneive.cycloneive_mac_sign_reg(cycloneive_mac_sign_reg)#1
+# Loading cycloneive.cycloneive_mac_mult_internal(vital_cycloneive_mac_mult_internal)#1
+# Loading cycloneive.cycloneive_mac_out(vital_cycloneive_mac_out)#1
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#134
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#4
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#135
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#136
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#137
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#8
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#138
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#10
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#11
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#12
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#13
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#139
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#15
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#16
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#17
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#18
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#19
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#140
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#141
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#142
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#23
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#143
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#144
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#145
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#146
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#28
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#29
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#147
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#148
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#149
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#33
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#150
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#151
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#152
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#153
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#154
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#155
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#156
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#157
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#158
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#159
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#160
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#161
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#46
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#162
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#163
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#164
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#165
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#166
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#52
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#167
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#168
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#169
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#170
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#57
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#171
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#59
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#172
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#173
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#174
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#175
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#64
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#65
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#176
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#67
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#177
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#178
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#70
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#179
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#180
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#73
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#181
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#182
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#183
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#184
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#78
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#185
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#186
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#187
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#82
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#188
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#84
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#189
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#190
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#87
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#88
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#89
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#191
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#192
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#92
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#193
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#94
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#95
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#194
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#195
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#98
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#99
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#196
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#101
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#102
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#197
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#104
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#198
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#106
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#107
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#108
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#109
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#199
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#111
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#200
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#113
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#114
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#115
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#201
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#202
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#203
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#119
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#120
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#121
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#122
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#204
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#124
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#125
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#126
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#127
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#128
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#129
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#130
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#131
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#205
+# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)#206
+# Loading instances from ALU16_7_1200mv_85c_vhd_slow.sdo
+# Loading timing data from ALU16_7_1200mv_85c_vhd_slow.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /alu16_tb File: /home/tiago/Documents/LSD/Aula07/Parte 3 (ALU16)/ALU16_Tb.vhd
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 2  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 4  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 4  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3939 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3939 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3962 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3962 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3977 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 3977 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4055 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4055 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4185 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4185 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4262 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4262 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4263 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4263 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4288 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4288 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4293 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4293 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4309 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4309 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4314 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4314 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4320 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4320 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4341 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4341 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4362 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4362 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4379 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4379 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4444 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4444 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4534 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4534 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4646 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4646 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4745 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4745 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4746 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4746 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4775 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4775 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4861 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4861 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4879 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4879 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4959 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4959 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4992 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4992 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4999 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 4999 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5011 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5011 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5033 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5033 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5357 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5357 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5444 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 5447 ps  Iteration: 0  Instance: /alu16_tb/uut/\Mult0|auto_generated|mac_mult1\/mac_multiply
+# 
+# stdin: <EOF>
+run 1000ns
+# End time: 11:41:43 on Apr 19,2024, Elapsed time: 0:01:21
+# Errors: 0, Warnings: 66

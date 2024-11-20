@@ -1,0 +1,144 @@
+$comment
+	File created using the following command:
+		vcd file grinaldaNatal.msim.vcd -direction
+$end
+$date
+	Fri Apr 12 10:04:19 2024
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2021.2
+$end
+$timescale
+	1ps
+$end
+
+$scope module programselector_vhd_vec_tst $end
+$var wire 1 ! input [1] $end
+$var wire 1 " input [0] $end
+$var wire 1 # ProgramaA $end
+$var wire 1 $ ProgramaB $end
+$var wire 1 % ProgramaC $end
+$var wire 1 & programaD $end
+
+$scope module i1 $end
+$var wire 1 ' gnd $end
+$var wire 1 ( vcc $end
+$var wire 1 ) unknown $end
+$var wire 1 * devoe $end
+$var wire 1 + devclrn $end
+$var wire 1 , devpor $end
+$var wire 1 - ww_devoe $end
+$var wire 1 . ww_devclrn $end
+$var wire 1 / ww_devpor $end
+$var wire 1 0 ww_input [1] $end
+$var wire 1 1 ww_input [0] $end
+$var wire 1 2 ww_ProgramaA $end
+$var wire 1 3 ww_ProgramaB $end
+$var wire 1 4 ww_ProgramaC $end
+$var wire 1 5 ww_programaD $end
+$var wire 1 6 \ProgramaA~output_o\ $end
+$var wire 1 7 \ProgramaB~output_o\ $end
+$var wire 1 8 \ProgramaC~output_o\ $end
+$var wire 1 9 \programaD~output_o\ $end
+$var wire 1 : \input[0]~input_o\ $end
+$var wire 1 ; \input[1]~input_o\ $end
+$var wire 1 < \Equal0~0_combout\ $end
+$var wire 1 = \Equal2~0_combout\ $end
+$var wire 1 > \Equal2~1_combout\ $end
+$var wire 1 ? \Equal2~2_combout\ $end
+$var wire 1 @ \ALT_INV_Equal0~0_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1#
+0$
+0%
+0&
+0'
+1(
+x)
+1*
+1+
+1,
+1-
+1.
+1/
+12
+03
+04
+05
+16
+07
+08
+09
+0:
+0;
+0<
+0=
+0>
+0?
+1@
+0!
+0"
+00
+01
+$end
+#20000
+1"
+11
+1:
+1<
+1=
+0@
+17
+06
+13
+02
+1$
+0#
+#40000
+0"
+1!
+01
+10
+1;
+0:
+0=
+1>
+18
+07
+14
+03
+1%
+0$
+#60000
+1"
+11
+1:
+0>
+1?
+19
+08
+15
+04
+1&
+0%
+#80000
+0"
+0!
+01
+00
+0;
+0:
+0<
+0?
+1@
+09
+16
+05
+12
+0&
+1#
+#1000000

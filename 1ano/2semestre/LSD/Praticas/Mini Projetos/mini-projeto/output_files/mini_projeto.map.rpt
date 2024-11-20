@@ -1,0 +1,308 @@
+Analysis & Synthesis report for mini_projeto
+Thu Apr 11 21:51:10 2024
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Parameter Settings for User Entity Instance: ClkDividerN:FreqDivider
+  6. Parameter Settings for User Entity Instance: blink_gen:Blink2hzGenerator
+  7. Parameter Settings for User Entity Instance: Programa2:prog2|blink_gen:blinkInstance
+  8. Parameter Settings for User Entity Instance: Programa3:prog3|blink_gen:blinkInstance
+  9. Port Connectivity Checks: "blink_gen:Blink2hzGenerator"
+ 10. Port Connectivity Checks: "ClkDividerN:FreqDivider"
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Thu Apr 11 21:51:10 2024              ;
+; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                      ; mini_projeto                                   ;
+; Top-level Entity Name              ; ProgSelector                                   ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; N/A until Partition Merge                      ;
+;     Total combinational functions  ; N/A until Partition Merge                      ;
+;     Dedicated logic registers      ; N/A until Partition Merge                      ;
+; Total registers                    ; N/A until Partition Merge                      ;
+; Total pins                         ; N/A until Partition Merge                      ;
+; Total virtual pins                 ; N/A until Partition Merge                      ;
+; Total memory bits                  ; N/A until Partition Merge                      ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
+; Total PLLs                         ; N/A until Partition Merge                      ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; ProgSelector       ; mini_projeto       ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ClkDividerN:FreqDivider ;
++----------------+----------+------------------------------------------+
+; Parameter Name ; Value    ; Type                                     ;
++----------------+----------+------------------------------------------+
+; divfactor      ; 50000000 ; Signed Integer                           ;
++----------------+----------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: blink_gen:Blink2hzGenerator ;
++----------------+----------+----------------------------------------------+
+; Parameter Name ; Value    ; Type                                         ;
++----------------+----------+----------------------------------------------+
+; number_steps   ; 25000000 ; Signed Integer                               ;
++----------------+----------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Programa2:prog2|blink_gen:blinkInstance ;
++----------------+----------+----------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                     ;
++----------------+----------+----------------------------------------------------------+
+; number_steps   ; 25000000 ; Signed Integer                                           ;
++----------------+----------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Programa3:prog3|blink_gen:blinkInstance ;
++----------------+----------+----------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                     ;
++----------------+----------+----------------------------------------------------------+
+; number_steps   ; 50000000 ; Signed Integer                                           ;
++----------------+----------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "blink_gen:Blink2hzGenerator"                                                         ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; blink ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ClkDividerN:FreqDivider"                                                                ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; pulseout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; clkout   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Thu Apr 11 21:51:03 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mini_projeto -c mini_projeto
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file blink_gen.vhd
+    Info (12022): Found design unit 1: blink_gen-Behavioral File: /home/tiago/Documents/LSD/mini-projeto/blink_gen.vhd Line: 12
+    Info (12023): Found entity 1: blink_gen File: /home/tiago/Documents/LSD/mini-projeto/blink_gen.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file Programa1.vhd
+    Info (12022): Found design unit 1: Programa1-Behavioral File: /home/tiago/Documents/LSD/mini-projeto/Programa1.vhd Line: 11
+    Info (12023): Found entity 1: Programa1 File: /home/tiago/Documents/LSD/mini-projeto/Programa1.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file Programa2.vhd
+    Info (12022): Found design unit 1: Programa2-Behavioral File: /home/tiago/Documents/LSD/mini-projeto/Programa2.vhd Line: 15
+    Info (12023): Found entity 1: Programa2 File: /home/tiago/Documents/LSD/mini-projeto/Programa2.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file BinToBCD.vhd
+    Info (12022): Found design unit 1: BinToBCD-Behavioral File: /home/tiago/Documents/LSD/mini-projeto/BinToBCD.vhd Line: 10
+    Info (12023): Found entity 1: BinToBCD File: /home/tiago/Documents/LSD/mini-projeto/BinToBCD.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file Bin7SegDecoder.vhd
+    Info (12022): Found design unit 1: Bin7SegDecoder-Behavioral File: /home/tiago/Documents/LSD/mini-projeto/Bin7SegDecoder.vhd Line: 13
+    Info (12023): Found entity 1: Bin7SegDecoder File: /home/tiago/Documents/LSD/mini-projeto/Bin7SegDecoder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file Programa3.vhd
+    Info (12022): Found design unit 1: Programa3-Behavioral File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 15
+    Info (12023): Found entity 1: Programa3 File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ProgSelector.vhd
+    Info (12022): Found design unit 1: ProgSelector-Shell File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 15
+    Info (12023): Found entity 1: ProgSelector File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ClkDividerN.vhd
+    Info (12022): Found design unit 1: ClkDividerN-Behavioral File: /home/tiago/Documents/LSD/mini-projeto/ClkDividerN.vhd Line: 12
+    Info (12023): Found entity 1: ClkDividerN File: /home/tiago/Documents/LSD/mini-projeto/ClkDividerN.vhd Line: 5
+Info (12127): Elaborating entity "ProgSelector" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at ProgSelector.vhd(8): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 8
+Warning (10541): VHDL Signal Declaration warning at ProgSelector.vhd(9): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 9
+Warning (10036): Verilog HDL or VHDL warning at ProgSelector.vhd(16): object "pulseFreq" assigned a value but never read File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 16
+Warning (10036): Verilog HDL or VHDL warning at ProgSelector.vhd(16): object "blinkSignal_2hz" assigned a value but never read File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 16
+Info (12129): Elaborating entity "ClkDividerN" using architecture "A:behavioral" for hierarchy "ClkDividerN:FreqDivider" File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 27
+Info (12128): Elaborating entity "blink_gen" for hierarchy "blink_gen:Blink2hzGenerator" File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 33
+Info (12129): Elaborating entity "Programa1" using architecture "A:behavioral" for hierarchy "Programa1:prog1" File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 39
+Info (12129): Elaborating entity "Programa2" using architecture "A:behavioral" for hierarchy "Programa2:prog2" File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 46
+Info (12129): Elaborating entity "Programa3" using architecture "A:behavioral" for hierarchy "Programa3:prog3" File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 53
+Warning (10492): VHDL Process Statement warning at Programa3.vhd(28): signal "Enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 28
+Info (12128): Elaborating entity "blink_gen" for hierarchy "Programa3:prog3|blink_gen:blinkInstance" File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 18
+Error (12014): Net "LEDR[3]", which fans out to "LEDR[3]", cannot be assigned more than one value File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 10
+    Error (12015): Net is fed by "Programa1:prog1|sinal_vermelho[3]" File: /home/tiago/Documents/LSD/mini-projeto/Programa1.vhd Line: 7
+    Error (12015): Net is fed by "Programa2:prog2|LEDR[3]" File: /home/tiago/Documents/LSD/mini-projeto/Programa2.vhd Line: 28
+    Error (12015): Net is fed by "Programa3:prog3|LEDR[3]" File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 10
+Error (12014): Net "LEDR[2]", which fans out to "LEDR[2]", cannot be assigned more than one value File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 10
+    Error (12015): Net is fed by "Programa1:prog1|sinal_vermelho[2]" File: /home/tiago/Documents/LSD/mini-projeto/Programa1.vhd Line: 7
+    Error (12015): Net is fed by "Programa2:prog2|LEDR[2]" File: /home/tiago/Documents/LSD/mini-projeto/Programa2.vhd Line: 28
+    Error (12015): Net is fed by "Programa3:prog3|LEDR[2]" File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 10
+Error (12014): Net "LEDR[1]", which fans out to "LEDR[1]", cannot be assigned more than one value File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 10
+    Error (12015): Net is fed by "Programa1:prog1|sinal_vermelho[1]" File: /home/tiago/Documents/LSD/mini-projeto/Programa1.vhd Line: 7
+    Error (12015): Net is fed by "Programa2:prog2|LEDR[1]" File: /home/tiago/Documents/LSD/mini-projeto/Programa2.vhd Line: 28
+    Error (12015): Net is fed by "Programa3:prog3|LEDR[1]" File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 10
+Error (12014): Net "LEDR[0]", which fans out to "LEDR[0]", cannot be assigned more than one value File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 10
+    Error (12015): Net is fed by "Programa1:prog1|sinal_vermelho[0]" File: /home/tiago/Documents/LSD/mini-projeto/Programa1.vhd Line: 7
+    Error (12015): Net is fed by "Programa2:prog2|LEDR[0]" File: /home/tiago/Documents/LSD/mini-projeto/Programa2.vhd Line: 28
+    Error (12015): Net is fed by "Programa3:prog3|LEDR[0]" File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 10
+Error (12014): Net "LEDG[3]", which fans out to "LEDG[3]", cannot be assigned more than one value File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 11
+    Error (12015): Net is fed by "Programa1:prog1|sinal_verde[3]" File: /home/tiago/Documents/LSD/mini-projeto/Programa1.vhd Line: 8
+    Error (12015): Net is fed by "Programa2:prog2|LEDG[3]" File: /home/tiago/Documents/LSD/mini-projeto/Programa2.vhd Line: 28
+    Error (12015): Net is fed by "Programa3:prog3|LEDG[3]" File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 11
+Error (12014): Net "LEDG[2]", which fans out to "LEDG[2]", cannot be assigned more than one value File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 11
+    Error (12015): Net is fed by "Programa1:prog1|sinal_verde[2]" File: /home/tiago/Documents/LSD/mini-projeto/Programa1.vhd Line: 8
+    Error (12015): Net is fed by "Programa2:prog2|LEDG[2]" File: /home/tiago/Documents/LSD/mini-projeto/Programa2.vhd Line: 28
+    Error (12015): Net is fed by "Programa3:prog3|LEDG[2]" File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 11
+Error (12014): Net "LEDG[1]", which fans out to "LEDG[1]", cannot be assigned more than one value File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 11
+    Error (12015): Net is fed by "Programa1:prog1|sinal_verde[1]" File: /home/tiago/Documents/LSD/mini-projeto/Programa1.vhd Line: 8
+    Error (12015): Net is fed by "Programa2:prog2|LEDG[1]" File: /home/tiago/Documents/LSD/mini-projeto/Programa2.vhd Line: 28
+    Error (12015): Net is fed by "Programa3:prog3|LEDG[1]" File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 11
+Error (12014): Net "LEDG[0]", which fans out to "LEDG[0]", cannot be assigned more than one value File: /home/tiago/Documents/LSD/mini-projeto/ProgSelector.vhd Line: 11
+    Error (12015): Net is fed by "Programa1:prog1|sinal_verde[0]" File: /home/tiago/Documents/LSD/mini-projeto/Programa1.vhd Line: 8
+    Error (12015): Net is fed by "Programa2:prog2|LEDG[0]" File: /home/tiago/Documents/LSD/mini-projeto/Programa2.vhd Line: 28
+    Error (12015): Net is fed by "Programa3:prog3|LEDG[0]" File: /home/tiago/Documents/LSD/mini-projeto/Programa3.vhd Line: 11
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 32 errors, 6 warnings
+    Error: Peak virtual memory: 410 megabytes
+    Error: Processing ended: Thu Apr 11 21:51:10 2024
+    Error: Elapsed time: 00:00:07
+    Error: Total CPU time (on all processors): 00:00:16
+
+

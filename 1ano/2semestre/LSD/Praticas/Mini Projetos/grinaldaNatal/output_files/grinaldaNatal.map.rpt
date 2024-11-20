@@ -1,0 +1,528 @@
+Analysis & Synthesis report for grinaldaNatal
+Fri Apr 12 11:48:15 2024
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: ProgramaB:progB|BlinkGenerator:blinkInstance
+ 12. Parameter Settings for User Entity Instance: ProgramaC:progC|BlinkGenerator:blinkInstance
+ 13. Parameter Settings for User Entity Instance: ProgramaD:progD|ClkDividerN:clkDividerN
+ 14. Parameter Settings for User Entity Instance: ProgramaD:progD|TimerN:timer6s
+ 15. Parameter Settings for User Entity Instance: ProgramaD:progD|BlinkGenerator:red_blink
+ 16. Parameter Settings for User Entity Instance: ProgramaD:progD|BlinkGenerator:green_blink
+ 17. Port Connectivity Checks: "ProgramaD:progD|TimerN:timer6s"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Apr 12 11:48:15 2024          ;
+; Quartus Prime Version              ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                      ; grinaldaNatal                                  ;
+; Top-level Entity Name              ; grinaldaNatal                                  ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 142                                            ;
+;     Total combinational functions  ; 141                                            ;
+;     Dedicated logic registers      ; 91                                             ;
+; Total registers                    ; 91                                             ;
+; Total pins                         ; 22                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; grinaldaNatal      ; grinaldaNatal      ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
+; ClkDividerN.vhd                  ; yes             ; User VHDL File  ; /home/tiago/Documents/LSD/grinaldaNatal/ClkDividerN.vhd     ;         ;
+; grinaldaNatal.vhd                ; yes             ; User VHDL File  ; /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd   ;         ;
+; Bin7SegDecoder.vhd               ; yes             ; User VHDL File  ; /home/tiago/Documents/LSD/grinaldaNatal/Bin7SegDecoder.vhd  ;         ;
+; ProgramaA.vhd                    ; yes             ; User VHDL File  ; /home/tiago/Documents/LSD/grinaldaNatal/ProgramaA.vhd       ;         ;
+; ProgramaB.vhd                    ; yes             ; User VHDL File  ; /home/tiago/Documents/LSD/grinaldaNatal/ProgramaB.vhd       ;         ;
+; ProgramaC.vhd                    ; yes             ; User VHDL File  ; /home/tiago/Documents/LSD/grinaldaNatal/ProgramaC.vhd       ;         ;
+; BlinkGenerator.vhd               ; yes             ; User VHDL File  ; /home/tiago/Documents/LSD/grinaldaNatal/BlinkGenerator.vhd  ;         ;
+; ProgramaD.vhd                    ; yes             ; User VHDL File  ; /home/tiago/Documents/LSD/grinaldaNatal/ProgramaD.vhd       ;         ;
+; ProgramSelector.vhd              ; yes             ; User VHDL File  ; /home/tiago/Documents/LSD/grinaldaNatal/ProgramSelector.vhd ;         ;
+; TimerN.vhd                       ; yes             ; User VHDL File  ; /home/tiago/Documents/LSD/grinaldaNatal/TimerN.vhd          ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 142            ;
+;                                             ;                ;
+; Total combinational functions               ; 141            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 42             ;
+;     -- 3 input functions                    ; 13             ;
+;     -- <=2 input functions                  ; 86             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 61             ;
+;     -- arithmetic mode                      ; 80             ;
+;                                             ;                ;
+; Total registers                             ; 91             ;
+;     -- Dedicated logic registers            ; 91             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 22             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 58             ;
+; Total fan-out                               ; 678            ;
+; Average fan-out                             ; 2.46           ;
++---------------------------------------------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                              ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Entity Name    ; Library Name ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+----------------+--------------+
+; |grinaldaNatal                          ; 141 (2)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |grinaldaNatal                                              ; grinaldaNatal  ; work         ;
+;    |Bin7SegDecoder:Bin7SegDecoderUnits| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |grinaldaNatal|Bin7SegDecoder:Bin7SegDecoderUnits           ; Bin7SegDecoder ; work         ;
+;    |ProgramaB:progB|                    ; 40 (1)              ; 26 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |grinaldaNatal|ProgramaB:progB                              ; ProgramaB      ; work         ;
+;       |BlinkGenerator:blinkInstance|    ; 39 (39)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |grinaldaNatal|ProgramaB:progB|BlinkGenerator:blinkInstance ; BlinkGenerator ; work         ;
+;    |ProgramaC:progC|                    ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |grinaldaNatal|ProgramaC:progC                              ; ProgramaC      ; work         ;
+;    |ProgramaD:progD|                    ; 92 (7)              ; 64 (4)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |grinaldaNatal|ProgramaD:progD                              ; ProgramaD      ; work         ;
+;       |BlinkGenerator:red_blink|        ; 31 (31)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |grinaldaNatal|ProgramaD:progD|BlinkGenerator:red_blink     ; BlinkGenerator ; work         ;
+;       |ClkDividerN:clkDividerN|         ; 10 (10)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |grinaldaNatal|ProgramaD:progD|ClkDividerN:clkDividerN      ; ClkDividerN    ; work         ;
+;       |TimerN:timer6s|                  ; 44 (44)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |grinaldaNatal|ProgramaD:progD|TimerN:timer6s               ; TimerN         ; work         ;
++-----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                  ;
++------------------------------------------------------------+------------------------------------------------------------------------+
+; Register name                                              ; Reason for Removal                                                     ;
++------------------------------------------------------------+------------------------------------------------------------------------+
+; ProgramaC:progC|LEDROUT[0..3]                              ; Stuck at GND due to stuck port data_in                                 ;
+; ProgramaB:progB|LEDGOUT[0..3]                              ; Stuck at GND due to stuck port data_in                                 ;
+; ProgramaD:progD|LEDROUT[1..3]                              ; Merged with ProgramaD:progD|LEDROUT[0]                                 ;
+; ProgramaB:progB|LEDROUT[1..3]                              ; Merged with ProgramaB:progB|LEDROUT[0]                                 ;
+; ProgramaD:progD|LEDGOUT[1..3]                              ; Merged with ProgramaD:progD|LEDGOUT[0]                                 ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[25]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[25]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[24]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[24]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[23]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[23]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[22]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[22]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[21]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[21]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[20]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[20]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[19]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[19]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[18]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[18]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[17]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[17]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[16]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[16]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[15]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[15]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[14]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[14]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[13]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[13]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[12]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[12]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[11]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[11]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[10]   ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[10]     ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[9]    ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[9]      ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[8]    ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[8]      ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[7]    ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[7]      ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[6]    ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[6]      ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[5]    ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[5]      ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[4]    ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[4]      ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[3]    ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[3]      ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[2]    ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[2]      ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[1]    ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[1]      ;
+; ProgramaD:progD|ClkDividerN:clkDividerN|s_divCounter[0]    ; Merged with ProgramaD:progD|BlinkGenerator:red_blink|s_counter[0]      ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[24] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[24] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[24]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[24] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[23] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[23] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[23]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[23] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[22] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[22] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[22]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[22] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[21] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[21] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[21]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[21] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[20] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[20] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[20]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[20] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[19] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[19] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[19]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[19] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[18] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[18] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[18]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[18] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[17] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[17] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[17]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[17] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[16] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[16] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[16]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[16] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[15] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[15] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[15]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[15] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[14] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[14] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[14]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[14] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[13] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[13] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[13]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[13] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[12] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[12] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[12]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[12] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[11] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[11] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[11]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[11] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[10] ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[10] ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[10]   ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[10] ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[9]  ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[9]  ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[9]    ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[9]  ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[8]  ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[8]  ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[8]    ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[8]  ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[7]  ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[7]  ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[7]    ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[7]  ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[6]  ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[6]  ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[6]    ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[6]  ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[5]  ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[5]  ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[5]    ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[5]  ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[4]  ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[4]  ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[4]    ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[4]  ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[3]  ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[3]  ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[3]    ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[3]  ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[2]  ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[2]  ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[2]    ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[2]  ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[1]  ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[1]  ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[1]    ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[1]  ;
+; ProgramaC:progC|BlinkGenerator:blinkInstance|s_counter[0]  ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[0]  ;
+; ProgramaD:progD|BlinkGenerator:green_blink|s_counter[0]    ; Merged with ProgramaB:progB|BlinkGenerator:blinkInstance|s_counter[0]  ;
+; ProgramaC:progC|LEDGOUT[1..3]                              ; Merged with ProgramaC:progC|LEDGOUT[0]                                 ;
+; Total Number of Removed Registers = 96                     ;                                                                        ;
++------------------------------------------------------------+------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 91    ;
+; Number of registers using Synchronous Clear  ; 83    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |grinaldaNatal|ProgramaD:progD|TimerN:timer6s|s_count[17]     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |grinaldaNatal|Bin7SegDecoder:Bin7SegDecoderUnits|decOut_n[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ProgramaB:progB|BlinkGenerator:blinkInstance ;
++----------------+----------+---------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                          ;
++----------------+----------+---------------------------------------------------------------+
+; number_steps   ; 25000000 ; Signed Integer                                                ;
++----------------+----------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ProgramaC:progC|BlinkGenerator:blinkInstance ;
++----------------+----------+---------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                          ;
++----------------+----------+---------------------------------------------------------------+
+; number_steps   ; 25000000 ; Signed Integer                                                ;
++----------------+----------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ProgramaD:progD|ClkDividerN:clkDividerN ;
++----------------+----------+----------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                     ;
++----------------+----------+----------------------------------------------------------+
+; divfactor      ; 50000000 ; Signed Integer                                           ;
++----------------+----------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ProgramaD:progD|TimerN:timer6s ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; n              ; 6     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ProgramaD:progD|BlinkGenerator:red_blink ;
++----------------+----------+-----------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                      ;
++----------------+----------+-----------------------------------------------------------+
+; number_steps   ; 50000000 ; Signed Integer                                            ;
++----------------+----------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ProgramaD:progD|BlinkGenerator:green_blink ;
++----------------+----------+-------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                        ;
++----------------+----------+-------------------------------------------------------------+
+; number_steps   ; 25000000 ; Signed Integer                                              ;
++----------------+----------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "ProgramaD:progD|TimerN:timer6s" ;
++-------+-------+----------+---------------------------------+
+; Port  ; Type  ; Severity ; Details                         ;
++-------+-------+----------+---------------------------------+
+; start ; Input ; Info     ; Stuck at VCC                    ;
++-------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 22                          ;
+; cycloneiii_ff         ; 91                          ;
+;     SCLR              ; 83                          ;
+;     plain             ; 8                           ;
+; cycloneiii_lcell_comb ; 143                         ;
+;     arith             ; 80                          ;
+;         2 data inputs ; 80                          ;
+;     normal            ; 63                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 42                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.33                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Fri Apr 12 11:48:06 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off grinaldaNatal -c grinaldaNatal
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file ClkDividerN.vhd
+    Info (12022): Found design unit 1: ClkDividerN-Behavioral File: /home/tiago/Documents/LSD/grinaldaNatal/ClkDividerN.vhd Line: 12
+    Info (12023): Found entity 1: ClkDividerN File: /home/tiago/Documents/LSD/grinaldaNatal/ClkDividerN.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file grinaldaNatal.vhd
+    Info (12022): Found design unit 1: grinaldaNatal-Shell File: /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd Line: 17
+    Info (12023): Found entity 1: grinaldaNatal File: /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file Bin7SegDecoder.vhd
+    Info (12022): Found design unit 1: Bin7SegDecoder-Behavioral File: /home/tiago/Documents/LSD/grinaldaNatal/Bin7SegDecoder.vhd Line: 13
+    Info (12023): Found entity 1: Bin7SegDecoder File: /home/tiago/Documents/LSD/grinaldaNatal/Bin7SegDecoder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ProgramaA.vhd
+    Info (12022): Found design unit 1: ProgramaA-Behavioral File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaA.vhd Line: 11
+    Info (12023): Found entity 1: ProgramaA File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaA.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file ProgramaB.vhd
+    Info (12022): Found design unit 1: ProgramaB-Behavioral File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaB.vhd Line: 14
+    Info (12023): Found entity 1: ProgramaB File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaB.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ProgramaC.vhd
+    Info (12022): Found design unit 1: ProgramaC-Behavioral File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaC.vhd Line: 14
+    Info (12023): Found entity 1: ProgramaC File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaC.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file BlinkGenerator.vhd
+    Info (12022): Found design unit 1: BlinkGenerator-Behavioral File: /home/tiago/Documents/LSD/grinaldaNatal/BlinkGenerator.vhd Line: 11
+    Info (12023): Found entity 1: BlinkGenerator File: /home/tiago/Documents/LSD/grinaldaNatal/BlinkGenerator.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file ProgramaD.vhd
+    Info (12022): Found design unit 1: ProgramaD-Behavioral File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaD.vhd Line: 14
+    Info (12023): Found entity 1: ProgramaD File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaD.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ProgramSelector.vhd
+    Info (12022): Found design unit 1: ProgramSelector-Behavioral File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramSelector.vhd Line: 14
+    Info (12023): Found entity 1: ProgramSelector File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramSelector.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file TimerN.vhd
+    Info (12022): Found design unit 1: TimerN-Behavioral File: /home/tiago/Documents/LSD/grinaldaNatal/TimerN.vhd Line: 17
+    Info (12023): Found entity 1: TimerN File: /home/tiago/Documents/LSD/grinaldaNatal/TimerN.vhd Line: 5
+Info (12127): Elaborating entity "grinaldaNatal" for the top level hierarchy
+Info (12129): Elaborating entity "ProgramSelector" using architecture "A:behavioral" for hierarchy "ProgramSelector:selector" File: /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd Line: 22
+Info (12129): Elaborating entity "Bin7SegDecoder" using architecture "A:behavioral" for hierarchy "Bin7SegDecoder:Bin7SegDecoderUnits" File: /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd Line: 30
+Info (12129): Elaborating entity "ProgramaA" using architecture "A:behavioral" for hierarchy "ProgramaA:progA" File: /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd Line: 35
+Info (12129): Elaborating entity "ProgramaB" using architecture "A:behavioral" for hierarchy "ProgramaB:progB" File: /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd Line: 40
+Info (12129): Elaborating entity "BlinkGenerator" using architecture "A:behavioral" for hierarchy "ProgramaB:progB|BlinkGenerator:blinkInstance" File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaB.vhd Line: 17
+Info (12129): Elaborating entity "ProgramaC" using architecture "A:behavioral" for hierarchy "ProgramaC:progC" File: /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd Line: 47
+Info (12129): Elaborating entity "ProgramaD" using architecture "A:behavioral" for hierarchy "ProgramaD:progD" File: /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd Line: 54
+Info (12129): Elaborating entity "ClkDividerN" using architecture "A:behavioral" for hierarchy "ProgramaD:progD|ClkDividerN:clkDividerN" File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaD.vhd Line: 21
+Info (12129): Elaborating entity "TimerN" using architecture "A:behavioral" for hierarchy "ProgramaD:progD|TimerN:timer6s" File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaD.vhd Line: 26
+Info (12129): Elaborating entity "BlinkGenerator" using architecture "A:behavioral" for hierarchy "ProgramaD:progD|BlinkGenerator:red_blink" File: /home/tiago/Documents/LSD/grinaldaNatal/ProgramaD.vhd Line: 36
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd Line: 10
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd Line: 10
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/tiago/Documents/LSD/grinaldaNatal/grinaldaNatal.vhd Line: 10
+Info (21057): Implemented 164 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 142 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 466 megabytes
+    Info: Processing ended: Fri Apr 12 11:48:15 2024
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:21
+
+

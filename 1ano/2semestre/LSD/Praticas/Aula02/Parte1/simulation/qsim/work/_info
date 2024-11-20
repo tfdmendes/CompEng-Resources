@@ -1,0 +1,161 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11e vcom 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/tiago/Documents/LSD/Aula02/Parte1/simulation/qsim
+T_opt
+!s110 1709284909
+VSHJUVd9JEY[I86^4ShI]90
+04 20 13 work dec2_4en_vhd_vec_tst dec2_4en_arch 1
+=1-000ae431a4f1-65e19e2c-b8499-1530
+!s124 OEM10U3 
+o-quiet -auto_acc_if_foreign -work work -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
+tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+Edec2_4en
+Z1 w1709284907
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 gn]m8U<PzXZH32IDQ4:hj3
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 cSe5`^NYM;IRV3WNS^Q7a2
+!i122 4
+R0
+Z8 8Dec2_4EnDemo.vho
+Z9 FDec2_4EnDemo.vho
+l0
+L78 1
+VIh3PKKolX;f`D6KJoANbZ2
+!s100 gao[0O3hLL>2Y5H1PnZCk0
+Z10 OL;C;2021.2;73
+32
+Z11 !s110 1709284908
+!i10b 1
+Z12 !s108 1709284908.000000
+Z13 !s90 -work|work|Dec2_4EnDemo.vho|
+Z14 !s107 Dec2_4EnDemo.vho|
+!i113 0
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 8 dec2_4en 0 22 Ih3PKKolX;f`D6KJoANbZ2
+!i122 4
+l128
+L96 199
+Vzc8G;h<^Jb?Y6:h3==b3l1
+!s100 M;nhXLe<lnPneGL[>Q49n0
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 0
+R15
+R16
+Edec2_4en_vhd_vec_tst
+Z17 w1709284906
+R5
+R6
+!i122 5
+R0
+Z18 8Waveform.vwf.vht
+Z19 FWaveform.vwf.vht
+l0
+L32 1
+V=Fcz1LPO@dQF_NOg:L9622
+!s100 GGLn?lDEfWOgHJjmo`<i81
+R10
+32
+R11
+!i10b 1
+R12
+Z20 !s90 -work|work|Waveform.vwf.vht|
+Z21 !s107 Waveform.vwf.vht|
+!i113 0
+R15
+R16
+Adec2_4en_arch
+R5
+R6
+DEx4 work 20 dec2_4en_vhd_vec_tst 0 22 =Fcz1LPO@dQF_NOg:L9622
+!i122 5
+l47
+L34 99
+VAAaPSO9RXeA9==>53WYKF0
+!s100 JckdS?[5oD[zMkY>@O9dH2
+R10
+32
+R11
+!i10b 1
+R12
+R20
+R21
+!i113 0
+R15
+R16
+Ehard_block
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+!i122 4
+R0
+R8
+R9
+l0
+L35 1
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 0
+R15
+R16
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+!i122 4
+l65
+L51 20
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 0
+R15
+R16

@@ -1,0 +1,121 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+!s11e vcom 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/tiago/Documents/LSD/Aula07/Parte 2 (Counter4)/simulation/modelsim
+T_opt
+!s110 1713519002
+V^mifJa]F6=lbc`_^1S@^:2
+04 14 10 work binudcntenrst4 behavioral 1
+=1-000ae431a4f1-66223999-8d346-13ec
+!s124 OEM10U1 
+Z2 o-quiet -auto_acc_if_foreign -work work
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1713519026
+VK?MUKH27ESlY=^cTf`=YB3
+04 16 8 work binudcntenrst8tb stimulus 1
+=1-000ae431a4f1-662239b2-9ff3a-1424
+!s124 OEM10U2 
+R2
+R3
+n@_opt1
+R4
+Ebinudcntenrst4
+Z5 w1713518846
+Z6 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R1
+Z9 8/home/tiago/Documents/LSD/Aula07/Parte 2 (Counter4)/BinUDCntEnRst4.vhd
+Z10 F/home/tiago/Documents/LSD/Aula07/Parte 2 (Counter4)/BinUDCntEnRst4.vhd
+l0
+L4 1
+V<^@X9X[h2SRhJ8WE_5>3^1
+!s100 3KJgd?fz^`6Y<gFNzQkJE2
+Z11 OL;C;2021.2;73
+31
+Z12 !s110 1713518988
+!i10b 1
+Z13 !s108 1713518988.000000
+Z14 !s90 -reportprogress|300|-93|-work|work|/home/tiago/Documents/LSD/Aula07/Parte 2 (Counter4)/BinUDCntEnRst4.vhd|
+Z15 !s107 /home/tiago/Documents/LSD/Aula07/Parte 2 (Counter4)/BinUDCntEnRst4.vhd|
+!i113 0
+Z16 o-93 -work work
+Z17 tExplicit 1 CvgOpt 0
+Abehavioral
+R6
+R7
+R8
+Z18 DEx4 work 14 binudcntenrst4 0 22 <^@X9X[h2SRhJ8WE_5>3^1
+!i122 0
+l14
+L12 19
+VIz^oH6InWf`C5618_F3IK3
+!s100 <61`Mhd6>8N]jhhThdh:T0
+R11
+31
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Ebinudcntenrst8tb
+Z19 w1713518959
+R6
+R7
+R8
+!i122 1
+R1
+Z20 8/home/tiago/Documents/LSD/Aula07/Parte 2 (Counter4)/BinUDCntEnRst8Tb.vhd
+Z21 F/home/tiago/Documents/LSD/Aula07/Parte 2 (Counter4)/BinUDCntEnRst8Tb.vhd
+l0
+L6 1
+VPzz765FW587nQ6ZjLXm@l1
+!s100 9aWJhb5m6joYKjAZ_<FFZ1
+R11
+32
+Z22 !s110 1713519017
+!i10b 1
+Z23 !s108 1713519017.000000
+Z24 !s90 -reportprogress|300|-work|work|/home/tiago/Documents/LSD/Aula07/Parte 2 (Counter4)/BinUDCntEnRst8Tb.vhd|
+Z25 !s107 /home/tiago/Documents/LSD/Aula07/Parte 2 (Counter4)/BinUDCntEnRst8Tb.vhd|
+!i113 0
+Z26 o-work work
+R17
+Astimulus
+R18
+R6
+R7
+R8
+DEx4 work 16 binudcntenrst8tb 0 22 Pzz765FW587nQ6ZjLXm@l1
+!i122 1
+l15
+L9 41
+VjM0eS35bSc`I?^:UZ:CnK3
+!s100 bI<H2F^5hMfSon:ekdQN01
+R11
+32
+R22
+!i10b 1
+R23
+R24
+R25
+!i113 0
+R26
+R17

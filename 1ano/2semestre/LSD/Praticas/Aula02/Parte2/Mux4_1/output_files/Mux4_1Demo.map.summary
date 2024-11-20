@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Mar  4 17:46:04 2024
+Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+Revision Name : Mux4_1Demo
+Top-level Entity Name : Mux4_1Demo
+Family : Cyclone IV E
+Total logic elements : 2
+    Total combinational functions : 2
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 7
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
