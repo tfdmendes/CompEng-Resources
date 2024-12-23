@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "Praticas"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"array": "c",
+			"__locale": "c",
+			"stdlib.h": "c"
+		}
+	}
+}

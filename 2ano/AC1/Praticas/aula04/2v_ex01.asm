@@ -20,18 +20,18 @@ main:						# void main(void){
 	li 	$t1, 0				#	i = 0;
 while:						#	while(){
 	la	$t2, array			#		t2 = &array[0]
-	addu $t3, $t2, $t1		#		t3 = &array[i]
+	addu 	$t3, $t2, $t1			#		t3 = &array[i]
 	lb	$t4, 0($t3)			#		t4 = array[i]
-	beq	$t4, '\0', endw 	# 		if( str[i] == '\0' ) break;
-if:							#		if( (str[i] >= '0') && (str[i] <= '9') ){
+	beq	$t4, '\0', endw 		# 		if( str[i] == '\0' ) break;
+if:						#		if( (str[i] >= '0') && (str[i] <= '9') ){
 	blt 	$t4, '0', endif	#
-	bgt	$t4, '9', endif 	#
-	addi 	$t0, $t0, 1		#			num++
+	bgt	$t4, '9', endif 		#
+	addi 	$t0, $t0, 1			#			num++
 endif:						#		}
-	addi 	$t1, $t1, 1		#		i++
+	addi 	$t1, $t1, 1			#		i++
 	j while					#	
 endw:						#	}
 	li $v0, 1				#
-	move $a0, $t0			#
+	move $a0, $t0				#
 	syscall					#
 	jr $ra					# }

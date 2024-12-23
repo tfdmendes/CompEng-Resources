@@ -1,5 +1,5 @@
 	.data
-str:.space 	21		# static char str[SIZE+1]; Reserva 21 bytes
+str:	.space 	21		# static char str[SIZE+1]; Reserva 21 bytes
 	.eqv 	SIZE, 20
 	.eqv	read_string, 8
 	.eqv	print_int10, 1

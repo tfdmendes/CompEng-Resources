@@ -1,0 +1,78 @@
+int checkp(int);
+
+int treat(int* array, int low, int high)
+{
+    int i, npr;
+    int* p = array;
+
+    for (i = low + 1, npr = 0; i < high; i++) 
+    {
+        if (checkp(i) == 1) {
+            *array = i;
+            array++;
+            npr++;
+        }
+    }
+    *(p + npr) = npr;
+    return npr;
+}
+
+
+
+
+
+float proc(double *array, double thd, double val, int n){
+    int i;
+    double aux, sum;
+
+    sum = 0.0;
+    for (i = 0; i < n; i++) {
+        aux = array[i] + val;
+        if (aux > thd) {
+            array[i] = thd;
+            sum += thd;
+        } else {
+            array[i] = aux;
+            sum += aux;
+        }
+    }
+    return (float) (sum / (double) n);
+}
+
+
+
+
+double prcells(int size, t_cell *tc)
+{
+    double tmp, result = 1.0;
+    int i;
+
+    for (i = 0; i < size; i++) {
+        tmp = (double)tc[i].ns / 3.597;
+        result += tmp;
+        tc[i].xpt = tmp;
+        tc[i].sum = (int)result - 1;
+    }
+    return result;
+}
+
+
+
+
+Copie a estrutura para o topo da área de resposta
+e substitua xx pelo valor adequado
+typedef struct
+{                  Alignment  Size   Offset
+char smp[17];       xx      xx     xx
+double xpt;         xx      xx     xx
+int ns;             xx      xx     xx
+char id;            xx      xx     xx
+int sum;            xx      xx     xx
+} t_cell;              xx      xx
+Copie para o topo da área de resposta e
+preencha com os registos usados
+
+
+
+
+
