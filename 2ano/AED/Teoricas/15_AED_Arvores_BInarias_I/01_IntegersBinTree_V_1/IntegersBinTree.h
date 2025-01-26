@@ -36,6 +36,8 @@ int TreeMirrors(const Tree* root1, const Tree* root2);
 
 int TreeGetNumberOfNodes(const Tree* root);
 
+int TreeGetNumberOfNonLeafs(const Tree* root);
+
 int TreeGetHeight(const Tree* root);
 
 ItemType TreeGetMin(const Tree* root);
@@ -70,6 +72,5 @@ int TreeRemove(Tree** pRoot, const ItemType item);
 
 // JUST FOR RUNNING EXAMPLES - REMOVE FROM THE INTERFACE
 
-Tree* createExampleTree(void);
 
 #endif  // _INTEGERS_BINTREE_

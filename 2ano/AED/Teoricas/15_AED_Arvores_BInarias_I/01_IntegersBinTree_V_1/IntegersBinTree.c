@@ -61,24 +61,25 @@ int TreeMirrors(const Tree* root1, const Tree* root2) {
 int TreeGetNumberOfNodes(const Tree* root) {
   if (root == NULL) return 0;
 
-  return 1 + TreeGetNumberOfNodes(root->left) +
-         TreeGetNumberOfNodes(root->right);
+  return 1 + TreeGetNumberOfNodes(root->left) + TreeGetNumberOfNodes(root->right);
 }
+
+
+int TreeGetNumberOfNonLeafs(const Tree* root){
+  if (root == NULL) return 0;
+
+
+}
+
+
 
 int TreeGetHeight(const Tree* root) {
   if (root == NULL) return -1;
 
-  int heightLeftSubTree = TreeGetHeight(root->left);
+  z
 
-  int heightRightSubTree = TreeGetHeight(root->right);
 
-  if (heightLeftSubTree > heightRightSubTree) {
-    return 1 + heightLeftSubTree;
-  }
-
-  return 1 + heightRightSubTree;
 }
-
 void TreeTraverseInPREOrder(Tree* root, void (*function)(ItemType* p)) {
   if (root == NULL) return;
 

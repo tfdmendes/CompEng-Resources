@@ -1,0 +1,37 @@
+Nov 12 11:12:29.224 HYPERVISOR: Release 0.2.23-amd64/Darwin (tag 2023010200)
+Nov 12 11:12:29.225 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 59233.
+Nov 12 11:12:29.225 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 12 11:12:29.226 HYPERVISOR: exec_cmd: hypervisor working_dir /Users/tiago/Library/Mobile Documents/com~apple~CloudDocs/Universidade/2ano/1semestre/RC1/Praticas/guide03 - VLANs/teste_ESWL3_ROUTER/project-files/dynamips 
+Nov 12 11:12:29.226 GENERAL: working_dir=/Users/tiago/Library/Mobile Documents/com~apple~CloudDocs/Universidade/2ano/1semestre/RC1/Praticas/guide03 - VLANs/teste_ESWL3_ROUTER/project-files/dynamips
+Nov 12 11:12:29.226 HYPERVISOR: exec_cmd: hypervisor working_dir /Users/tiago/Library/Mobile Documents/com~apple~CloudDocs/Universidade/2ano/1semestre/RC1/Praticas/guide03 - VLANs/teste_ESWL3_ROUTER/project-files/dynamips/8b88511f-1272-4956-88c4-51b5bfb53133 
+Nov 12 11:12:29.226 GENERAL: working_dir=/Users/tiago/Library/Mobile Documents/com~apple~CloudDocs/Universidade/2ano/1semestre/RC1/Praticas/guide03 - VLANs/teste_ESWL3_ROUTER/project-files/dynamips/8b88511f-1272-4956-88c4-51b5bfb53133
+Nov 12 11:12:29.226 HYPERVISOR: exec_cmd: vm create R1 2 c7200 
+Nov 12 11:12:29.226 VM: VM R1 created.
+Nov 12 11:12:29.227 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5006 
+Nov 12 11:12:29.227 HYPERVISOR: exec_cmd: c7200 get_mac_addr R1 
+Nov 12 11:12:29.227 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 12 11:12:29.227 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 C7200-IO-FE 
+Nov 12 11:12:29.228 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Nov 12 11:12:29.228 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 12 11:12:29.228 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x60609c20 
+Nov 12 11:12:29.229 HYPERVISOR: exec_cmd: vm set_ios R1 /Users/tiago/GNS3/images/IOS/c7200-adventerprisek9-mz.151-4.M2.image 
+Nov 12 11:12:29.229 HYPERVISOR: exec_cmd: c7200 set_mac_addr R1 ca02.3651.0000 
+Nov 12 11:12:29.230 HYPERVISOR: exec_cmd: vm set_nvram R1 512 
+Nov 12 11:12:29.230 HYPERVISOR: exec_cmd: vm set_ram R1 512 
+Nov 12 11:12:29.230 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 12 11:12:29.230 HYPERVISOR: exec_cmd: vm slot_remove_binding R1 0 0 
+Nov 12 11:12:29.231 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 12 11:12:29.231 HYPERVISOR: exec_cmd: vm slot_add_binding R1 0 0 C7200-IO-GE-E 
+Nov 12 11:12:29.231 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 12 11:12:29.231 HYPERVISOR: exec_cmd: vm slot_add_binding R1 1 0 PA-2FE-TX 
+Nov 12 11:12:29.231 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 12 11:12:29.231 HYPERVISOR: exec_cmd: vm slot_add_binding R1 2 0 PA-2FE-TX 
+Nov 12 11:12:43.271 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 12 11:12:43.273 HYPERVISOR: exec_cmd: vm extract_config R1 
+Nov 12 11:12:43.290 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 12 11:12:43.290 HYPERVISOR: exec_cmd: vm extract_config R1 
+Nov 12 11:12:43.291 HYPERVISOR: exec_cmd: vm delete R1 
+Nov 12 11:12:43.291 VM: VM R1 destroyed.
+Nov 12 11:12:43.291 HYPERVISOR: exec_cmd: hypervisor stop 
+Nov 12 11:12:43.440 HYPERVISOR: Stopped.
+Nov 12 11:12:43.440 GENERAL: reset done.

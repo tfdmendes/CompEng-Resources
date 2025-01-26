@@ -1,0 +1,24 @@
+Oct 29 11:13:02.926 HYPERVISOR: Release 0.2.23-amd64/Darwin (tag 2023010200)
+Oct 29 11:13:02.927 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 59478.
+Oct 29 11:13:02.934 HYPERVISOR: exec_cmd: hypervisor version 
+Oct 29 11:13:02.934 HYPERVISOR: exec_cmd: hypervisor working_dir /Users/tiago/Library/Mobile Documents/com~apple~CloudDocs/Universidade/2ano/1semestre/RC1/Praticas/guide04/guiao04/project-files/dynamips 
+Oct 29 11:13:02.934 GENERAL: working_dir=/Users/tiago/Library/Mobile Documents/com~apple~CloudDocs/Universidade/2ano/1semestre/RC1/Praticas/guide04/guiao04/project-files/dynamips
+Oct 29 11:13:02.934 HYPERVISOR: exec_cmd: ethsw create Switch1 
+Oct 29 11:13:03.140 HYPERVISOR: exec_cmd: nio create_udp udp-1f1b1fa2-bb43-4ae2-81a0-0d5639e8d741 20001 127.0.0.1 20000 
+Oct 29 11:13:03.140 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-1f1b1fa2-bb43-4ae2-81a0-0d5639e8d741 
+Oct 29 11:13:03.157 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-1f1b1fa2-bb43-4ae2-81a0-0d5639e8d741 1 
+Oct 29 11:13:03.183 HYPERVISOR: exec_cmd: nio create_udp udp-48d720aa-cb24-467a-91cf-0f7302ae0302 20003 127.0.0.1 20002 
+Oct 29 11:13:03.183 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-48d720aa-cb24-467a-91cf-0f7302ae0302 
+Oct 29 11:13:03.204 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-48d720aa-cb24-467a-91cf-0f7302ae0302 1 
+Oct 29 11:13:03.224 HYPERVISOR: exec_cmd: nio create_udp udp-8f4a659a-901e-4cf4-a759-f8aa12905f1b 20004 127.0.0.1 20005 
+Oct 29 11:13:03.224 HYPERVISOR: exec_cmd: ethsw add_nio Switch1 udp-8f4a659a-901e-4cf4-a759-f8aa12905f1b 
+Oct 29 11:13:03.249 HYPERVISOR: exec_cmd: ethsw set_access_port Switch1 udp-8f4a659a-901e-4cf4-a759-f8aa12905f1b 1 
+Oct 29 11:32:29.077 HYPERVISOR: exec_cmd: nio bind_filter udp-8f4a659a-901e-4cf4-a759-f8aa12905f1b 2 capture 
+Oct 29 11:32:29.078 HYPERVISOR: exec_cmd: nio setup_filter udp-8f4a659a-901e-4cf4-a759-f8aa12905f1b 2 en10mb /Users/tiago/Library/Mobile Documents/com~apple~CloudDocs/Universidade/2ano/1semestre/RC1/Praticas/guide04/guiao04/project-files/captures/Switch1_Ethernet7_to_R1_FastEthernet10.pcap 
+Oct 29 11:40:52.202 HYPERVISOR: exec_cmd: nio unbind_filter udp-8f4a659a-901e-4cf4-a759-f8aa12905f1b 2 
+Oct 29 11:41:13.337 HYPERVISOR: exec_cmd: nio bind_filter udp-8f4a659a-901e-4cf4-a759-f8aa12905f1b 2 capture 
+Oct 29 11:41:13.338 HYPERVISOR: exec_cmd: nio setup_filter udp-8f4a659a-901e-4cf4-a759-f8aa12905f1b 2 en10mb /Users/tiago/Library/Mobile Documents/com~apple~CloudDocs/Universidade/2ano/1semestre/RC1/Praticas/guide04/guiao04/project-files/captures/Switch1_Ethernet7_to_R1_FastEthernet10.pcap 
+Oct 29 14:32:42.198 HYPERVISOR: exec_cmd: ethsw delete Switch1 
+Oct 29 14:32:42.261 HYPERVISOR: exec_cmd: hypervisor stop 
+Oct 29 14:32:42.571 HYPERVISOR: Stopped.
+Oct 29 14:32:42.571 GENERAL: reset done.
